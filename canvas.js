@@ -61,6 +61,7 @@ function start(params) {
 			p1 = null;
 			p2 = null;
 	    ctx.fillStyle = "black";
+	    		canvas.removeEventListener("click", initPoint);
 			canvas.removeEventListener("click", inputPoint);
 			canvas.addEventListener("click", initPoint);
 		}
