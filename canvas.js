@@ -44,11 +44,12 @@ function start(params) {
   document.addEventListener("keyup", function completeInput(e) {
     if (e.keyCode == 13 || e.which == 13) { // 13 -> Enter
       	canvas.removeEventListener("click", inputPoint);
+	document.removeEventListener("keyup", completeInput);
 	canvas.addEventListener("click", function inputSeed(e) {
 			//canvas.removeEventListener("click", inputSeed);
 			var seed = Point.newPointFromMouse(e.clientX, e.clientY);
 			ctx.fillStyle = "green";
-			boundaryFill(ctx, seed);
+			boundaryFill(ctx, seed);			
 	});
     } else if (e.keyCode == 27 || e.which == 27) { // 27 -> Esc
 			p1 = null;
