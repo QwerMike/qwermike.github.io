@@ -85,28 +85,28 @@ function boundaryFill(ctx, seed, color) {
 		setTimeout(()=>{
 			if (seed.x < 31){
 				var p = new Point(seed.x + 1, seed.y);
-				boundaryFill(ctx, p);
+				boundaryFill(ctx, p, color);
 			}
 		}, 100);
 			
 		setTimeout(()=>{
 			if (seed.x > 0) {
 				var p = new Point(seed.x - 1, seed.y);
-				boundaryFill(ctx, p);
+				boundaryFill(ctx, p, color);
 			}
 		}, 100);
 			
 		setTimeout(()=>{
 			if (seed.y < 31) {
 				var p = new Point(seed.x, seed.y + 1);
-				boundaryFill(ctx, p);
+				boundaryFill(ctx, p, color);
 			}
 		}, 100);
 		
 		setTimeout(()=>{
 			if (seed.y > 0) {
 				var p = new Point(seed.x, seed.y - 1);
-				boundaryFill(ctx, p);
+				boundaryFill(ctx, p, color);
 			}
 		}, 100);
 	}
