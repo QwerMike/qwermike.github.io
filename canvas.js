@@ -49,7 +49,13 @@ function start(params) {
 			//canvas.removeEventListener("click", inputSeed);
 			var seed = Point.newPointFromMouse(e.clientX, e.clientY);
 			//ctx.fillStyle = "green";
-			boundaryFill(ctx, seed);			
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++ ) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			ctx.fillStyle = color;
+			boundaryFill(ctx, seed, color);			
 	});
     } else if (e.keyCode == 27 || e.which == 27) { // 27 -> Esc
 			p1 = null;
@@ -70,14 +76,9 @@ function showPoly(ctx, str) {
   }
 }
 
-function boundaryFill(ctx, seed) {
+function boundaryFill(ctx, seed, color) {
   if (!pixelGrid[seed.x][seed.y]) {
-	  var letters = '0123456789ABCDEF';
-			var color = '#';
-			for (var i = 0; i < 6; i++ ) {
-				color += letters[Math.floor(Math.random() * 16)];
-			}
-			ctx.fillStyle = color;
+		ctx.fillStyle = color;
 		pixelGrid[seed.x][seed.y] = true;
 		Draw.point(seed, ctx);
 		console.log(seed.x, seed.y);
