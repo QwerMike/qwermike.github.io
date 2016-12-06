@@ -44,6 +44,7 @@ function start(params) {
   document.addEventListener("keyup", function completeInput(e) {
     if (e.keyCode == 13 || e.which == 13) { // 13 -> Enter
       canvas.removeEventListener("click", inputPoint);
+	    canvas.removeEventListener("click", initPoint);
 			document.removeEventListener("keyup", completeInput);
 			canvas.addEventListener("click", function inputSeed(e) {
 			//canvas.removeEventListener("click", inputSeed);
