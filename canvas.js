@@ -53,6 +53,7 @@ function start(params) {
     } else if (e.keyCode == 27 || e.which == 27) { // 27 -> Esc
 			p1 = null;
 			p2 = null;
+	    		ctx.fillStyle = "black";
 			canvas.removeEventListener("click", inputPoint);
 			canvas.addEventListener("click", initPoint);
 		}
