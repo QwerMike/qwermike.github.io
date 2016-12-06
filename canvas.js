@@ -48,7 +48,13 @@ function start(params) {
 			canvas.addEventListener("click", function inputSeed(e) {
 			//canvas.removeEventListener("click", inputSeed);
 			var seed = Point.newPointFromMouse(e.clientX, e.clientY);
-			ctx.fillStyle = "green";
+			//ctx.fillStyle = "green";
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++ ) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			ctx.fillStyle = color;
 			boundaryFill(ctx, seed);			
 	});
     } else if (e.keyCode == 27 || e.which == 27) { // 27 -> Esc
