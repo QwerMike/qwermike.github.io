@@ -22,6 +22,14 @@ function start() {
                 snapshot.val().y * yCoef,
                 pointRadius);
     });
+
+  db.ref('/whiteboard/cleared')
+    .on('value', function(snapshot) {
+      if (snapshot.val() == true) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        db.ref('/whiteboard/cleared').set(false);
+      }
+    });
 }
 
 function initCanvas() {
