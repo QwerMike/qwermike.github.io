@@ -85,10 +85,6 @@ function vigenereDecrypt(encrypted, key, alphabet) {
     .join('');
 }
 
-var imported = document.createElement('script');
-imported.src = 'http://peterolson.github.com/BigInteger.js/BigInteger.min.js';
-document.head.appendChild(imported);
-
 // p, q - prime numbers
 // returns {publicKey: k1, privateKey: k2, n: n}
 function rsaGenerateKeys(p, q) {
