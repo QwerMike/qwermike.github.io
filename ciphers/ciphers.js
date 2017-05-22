@@ -91,7 +91,7 @@ document.head.appendChild(imported);
 
 // p, q - prime numbers
 // returns {publicKey: k1, privateKey: k2, n: n}
-function generateKeys(p, q) {
+function rsaGenerateKeys(p, q) {
   var n = p.times(q)
     , fn = p.minus(1).times(q.minus(1));
   var e;

@@ -27,7 +27,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#caesarCipher" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Caesar Cipher</a>
     <a href="#simpleSubstitution" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Simple Substitution</a>
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Vigenere Cipher</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#rsa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">RSA</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -35,7 +35,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#caesarCipher" class="w3-bar-item w3-button w3-padding-large">Caesar Cipher</a>
     <a href="#simpleSubstitution" class="w3-bar-item w3-button w3-padding-large">Simple Substitution</a>
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-padding-large">Vigenere Cipher</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    <a href="#rsa" class="w3-bar-item w3-button w3-padding-large">RSA</a>
   </div>
 </div>
 
@@ -142,6 +142,55 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 </div>
 
+<!-- RSA -->
+<div id="rsa" class="w3-row-padding w3-white w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1>RSA</h1>
+    <div class="w3-container w3-card-4 w3-padding-16 w3-white">
+      <div class="w3-section">
+        <label>p (prime number)</label>
+        <input class="w3-input w3-border" oninput="rsaP=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <label>q (prime number)</label>
+        <input class="w3-input w3-border" oninput="rsaQ=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <button type="button" class="w3-button w3-blue w3-theme"
+          onclick=
+          "rsaKeys = rsaGenerateKeys(bigInt(rsaP), bigInt(rsaQ));
+           document.getElementsByName('RsaKeys')[0].value 
+             = 'public: ' + rsaKeys.publicKey + '\nprivate: ' + rsaKeys.privateKey
+             + '\nn: ' + rsaKeys.n">
+          Generate keys
+        </button>
+      </div>      
+      <div class="w3-section">
+        <label>Keys</label>
+        <textarea name="RsaKeys" class="w3-input w3-border" rows="3"></textarea>
+      </div>
+      <div class="w3-section">
+        <label>Input (numbers)</label>
+        <input name="Input" class="w3-input w3-border"></input>
+      </div>
+      <div class="w3-section">
+        <button type="button" class="w3-button w3-green w3-theme"
+          onclick=
+          "document.getElementsByName('Output')[3].value 
+             = rsaEncrypt(bigInt(document.getElementsByName('Input')[3].value), rsaKeys.publicKey, rsaKeys.n)">
+          Encrypt
+        </button>
+        <button type="button" class="w3-button w3-red w3-theme"
+          onclick=
+          "document.getElementsByName('Output')[3].value 
+             = rsaDecrypt(bigInt(document.getElementsByName('Input')[3].value), rsaKeys.privateKey, rsaKeys.n)">Decrypt</button>
+      </div>
+      <div class="w3-section">      
+        <label>Output</label>
+        <textarea name="Output" class="w3-input w3-border" style="resize:vertical"></textarea>
+      </div>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
