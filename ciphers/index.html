@@ -28,6 +28,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#simpleSubstitution" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Simple Substitution</a>
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Vigenere Cipher</a>
     <a href="#rsa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">RSA</a>
+    <a href="#dhKeyExchange" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Diffie–Hellman</a>    
   </div>
 
   <!-- Navbar on small screens -->
@@ -36,6 +37,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#simpleSubstitution" class="w3-bar-item w3-button w3-padding-large">Simple Substitution</a>
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-padding-large">Vigenere Cipher</a>
     <a href="#rsa" class="w3-bar-item w3-button w3-padding-large">RSA</a>
+    <a href="#dhKeyExchange" class="w3-bar-item w3-button w3-padding-large">Diffie–Hellman</a>
   </div>
 </div>
 
@@ -143,7 +145,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <!-- RSA -->
-<div id="rsa" class="w3-row-padding w3-white w3-padding-64 w3-container">
+<div id="rsa" class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <h1>RSA</h1>
     <div class="w3-container w3-card-4 w3-padding-16 w3-white">
@@ -190,6 +192,58 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <textarea name="Output" class="w3-input w3-border" style="resize:vertical"></textarea>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Diffie–Hellman key exchange -->
+<div id="dhKeyExchange" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1>Diffie–Hellman</h1>
+    <h2>Key Exchange</h2>
+    <div class="w3-container w3-card-4 w3-padding-16 w3-white">
+      <div class="w3-section">
+        <label>n (prime number)</label>
+        <input class="w3-input w3-border" oninput="dhN=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <label>Public key ∈ [1, n]</label>
+        <input class="w3-input w3-border" oninput="dhPublicKey=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <label>Private key ∈ [1, n - 1]</label>
+        <input class="w3-input w3-border" oninput="dhPrivateKey=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <button type="button" class="w3-button w3-blue w3-theme"
+          onclick=
+          "document.getElementsByName('MixedKey')[0].value 
+             = dhMixKeys(bigInt(dhPrivateKey), bigInt(dhPublicKey), bigInt(dhN))">
+          Calculate mixed key
+        </button>
+      </div>      
+      <div class="w3-section">
+        <label>Mixed key (Share with other client)</label>
+        <input name="MixedKey" class="w3-input w3-border"></input>
+      </div>
+      <div class="w3-section">
+        <label>Somebody's mixed key</label>
+        <input name="SbMixedKey" class="w3-input w3-border"></input>
+      </div>
+      <div class="w3-section">
+        <button type="button" class="w3-button w3-green w3-theme"
+          onclick=
+          "document.getElementsByName('SecretKey')[0].value 
+             = dhSecretKey(bigInt(dhPrivateKey), 
+                 bigInt(document.getElementsByName('SbMixedKey')[0].value),
+                 bigInt(dhN))">
+          Calculate secret key
+        </button>
+      <div class="w3-section">      
+        <label>Secret key</label>
+        <input name="SecretKey" class="w3-input w3-border"></input>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
