@@ -24,7 +24,7 @@ function generateFrequencyTable(array) {
     return uniques.sort(compareFrequency);
 }
 
-function cesarCipherEncrypt(msg) {
+function caesarCipherEncrypt(msg) {
   var encrypted = '';
   for (var i = 0; i < msg.length; ++i) {
     encrypted += String.fromCharCode(msg.charCodeAt(i) + 3);
@@ -32,7 +32,7 @@ function cesarCipherEncrypt(msg) {
   return encrypted;
 }
 
-function cesarCipherDecrypt(msg) {
+function caesarCipherDecrypt(msg) {
   var decrypted = '';
   for (var i = 0; i < msg.length; ++i) {
     decrypted += String.fromCharCode(msg.charCodeAt(i) - 3);
