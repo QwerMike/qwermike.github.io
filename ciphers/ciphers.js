@@ -145,3 +145,41 @@ function dhMixKeys(privateKey, publicKey, n) {
 function dhSecretKey(privateKey, mixedKey, n) {
   return mixedKey.modPow(privateKey, n);
 }
+
+function bbsGenerateKeys(p, q) {
+  var n = p * q;
+  var x = 0;
+  while ([0, 1, p, q].indexOf(x) != -1) {
+    x = Math.floor(Math.random() * n);
+  }
+  return {n, x};
+}
+
+function* bbsGenerator(n, x) {
+  var xi = x;
+  while (true) {
+    xi = xi*xi % n
+    yield xi;
+  }
+}
+
+function bbs(n, x, data) {
+  var gen = bbsGenerator(n, x);
+  for (var i = 0, len = data.length; i < len; ++i) {
+    data[i] ^= gen.next().value & 0b11111111;
+  }
+}
+
+function bbsHandleFileSelect(evt) {
+  var file = evt.target.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    var data = new Uint8Array(reader.result);
+    bbs(parseInt(bbsN), parseInt(bbsX), data);
+    var toSave = new Blob([data], {type: "application/octet-stream"});
+    saveAs(toSave, file.name);
+  }
+
+  reader.readAsArrayBuffer(file);
+}

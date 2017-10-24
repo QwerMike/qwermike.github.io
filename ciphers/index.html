@@ -17,6 +17,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </style>
 <script src="ciphers.js"></script>
 <script src="BigInteger.min.js"></script>
+<script src="FileSaver.min.js"></script>
 <script>
   
 </script>
@@ -32,6 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Vigenere Cipher</a>
     <a href="#rsa" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">RSA</a>
     <a href="#dhKeyExchange" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Diffie–Hellman</a>    
+    <a href="#bbs" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">BBS</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -41,6 +43,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="#vigenereCipher" class="w3-bar-item w3-button w3-padding-large">Vigenere Cipher</a>
     <a href="#rsa" class="w3-bar-item w3-button w3-padding-large">RSA</a>
     <a href="#dhKeyExchange" class="w3-bar-item w3-button w3-padding-large">Diffie–Hellman</a>
+    <a href="#bbs" class="w3-bar-item w3-button w3-padding-large">BBS</a>
   </div>
 </div>
 
@@ -241,9 +244,48 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                  bigInt(dhN))">
           Calculate secret key
         </button>
+      </div>
       <div class="w3-section">      
         <label>Secret key</label>
         <input name="SecretKey" class="w3-input w3-border"></input>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BBS -->
+<div id="rsa" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1>Blum Blum Shub</h1>
+    <div class="w3-container w3-card-4 w3-padding-16 w3-white">
+      <div class="w3-section">
+        <label>p (prime number)</label>
+        <input class="w3-input w3-border" oninput="bbsP=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <label>q (prime number)</label>
+        <input class="w3-input w3-border" oninput="bbsQ=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <button type="button" class="w3-button w3-blue w3-theme"
+          onclick=
+          "var bbsKeys = bbsGenerateKeys(bbsP, bbsQ);
+           bbsN = bbsKeys.n;
+           bbsX = bbsKeys.x;
+           document.getElementsByName('BbsN')[0].value = bbsN; 
+           document.getElementsByName('BbsX')[0].value = bbsX;">
+          Generate keys
+        </button>
+      </div>      
+      <div class="w3-section">
+        <label>n</label>
+        <input name="BbsN" class="w3-input w3-border" oninput="bbsN=this.value"></input>
+        <label>x</label>
+        <input name="BbsX" class="w3-input w3-border" oninput="bbsX=this.value"></input>
+      </div>
+      <div class="w3-section">
+        <label>Input (file)</label>
+        <input id="bbsFile" type="file" class="w3-input w3-border"></input>
       </div>
     </div>
   </div>
@@ -264,6 +306,8 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+document.getElementById('bbsFile').addEventListener('change', bbsHandleFileSelect, false);
 </script>
 
 </body>
