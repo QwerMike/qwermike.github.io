@@ -41,7 +41,7 @@ laptop(15, intel, 2, 500, 6499,
     "https://rozetka.com.ua/ua/lenovo_ideapad_110_80t700d2ra/p20851979/").
 laptop(15, amd, 4, 500, 7699,
     "https://rozetka.com.ua/ua/hp_2ew01es/p24587143/").
-laptop(15, intel, 8, 1000, 17299,
+laptop(15, intel, 8, 1, 17299,
     "https://rozetka.com.ua/ua/dell_55i58h1r7m_lfg/p22323043/").
 laptop(15, intel, 4, 500, 8499,
     "https://rozetka.com.ua/ua/acer_nx_ghaeu_004/p12200672/").
