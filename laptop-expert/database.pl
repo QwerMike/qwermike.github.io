@@ -97,3 +97,67 @@ laptop(15, intel, 8, 1, 12999,
     "https://rozetka.com.ua/ua/hp_250_g6_2ev93es/p24782240/").
 laptop(15, intel, 8, 256, 36999,
     "https://rozetka.com.ua/ua/dell_i75f58s2ndl_6bk/p27225993/").
+laptop(15, intel, 16, 1, 58777,
+    "https://rozetka.com.ua/ua/asus_ux550ve_bn040t/p22213423/").
+laptop(15, intel, 8, 1, 16499,
+    "https://rozetka.com.ua/ua/lenovo_80xl02r5ra/p19340839/").
+laptop(15, intel, 4, 1, 14899,
+    "https://rozetka.com.ua/ua/acer_nx_gdzeu_059/p16104566/").
+laptop(13, intel, 8, 128, 30699,
+    "https://rozetka.com.ua/ua/hp_n7h79ea/p6429274/").
+laptop(15, intel, 16, 1, 112099,
+    "https://rozetka.com.ua/ua/apple_z0uc000cr/p21820149/").
+laptop(12, intel, 8, 256, 45799,
+    "https://rozetka.com.ua/ua/apple_mnyh2ua_a/p17929050/").
+laptop(15, intel, 4, 128, 13499,
+    "https://rozetka.com.ua/ua/acer_nx_gdheu_002/p16109114/").
+laptop(13, intel, 16, 256, 67299,
+    "https://rozetka.com.ua/ua/apple_z0um000wt/p21818875/").
+laptop(15, intel, 8, 256, 20299,
+    "https://rozetka.com.ua/ua/dell_inspiron_5567_i55f78s2ddl_6fg/p21159083/").
+laptop(15, amd, 4, 500, 11499,
+    "https://rozetka.com.ua/ua/hp_probook_455_x0p66es/p11107471/").
+laptop(15, intel, 8, 256, 27499,
+    "https://rozetka.com.ua/ua/dell_inspiron_7567_i75f58s2ndl_6b/p21160826/").
+laptop(15, intel, 8, 1, 15391,
+    "https://rozetka.com.ua/ua/lenovo_80th001hra/p28335121/").
+laptop(15, intel, 8, 256, 23999,
+    "https://rozetka.com.ua/ua/dell_n038vn5568emea01_1801_ubu/p21287155/").
+laptop(15, intel, 8, 1, 16499,
+    "https://rozetka.com.ua/ua/dell_inspiron_3567_35i58h1r5m_lbk/p24853599/").
+laptop(13, intel, 8, 256, 63799,
+    "https://rozetka.com.ua/ua/apple_mpxv2ua_a/p17962728/").
+laptop(13, intel, 8, 256, 39799,
+    "https://rozetka.com.ua/ua/apple_mqd42ua_a/p17929638/").
+laptop(15, intel, 4, 1, 12599,
+    "https://rozetka.com.ua/ua/dell_n029spcvn3568_u/p27168881/").
+laptop(14, intel, 16, 256, 44688,
+    "https://rozetka.com.ua/ua/lenovo_20hfs02200/p21820037/").
+laptop(15, intel, 4, 500, 6799,
+    "https://rozetka.com.ua/ua/hp_w4m65ea/p24199210/").
+laptop(15, intel, 8, 1, 17299,
+    "https://rozetka.com.ua/ua/hp_f4v30ea/p10229258/").
+laptop(15, intel, 16, 256, 69199,
+    "https://rozetka.com.ua/ua/apple_macbook_pro_retina_15_mjlq2uaa/p3252779/").
+laptop(15, intel, 16, 512, 39999,
+    "https://rozetka.com.ua/ua/asus_ux530ux_fy033t/p17736330/").
+laptop(15, intel, 8, 256, 32754,
+    "https://rozetka.com.ua/ua/lenovo_20h500b4rt/p21820009/").
+laptop(14, intel, 4, 128, 17999,
+    "https://rozetka.com.ua/ua/hp_p5r72ea/p10113779/").
+laptop(12, intel, 16, 512, 51380,
+    "https://rozetka.com.ua/ua/hp_z2v58ea/p21615161/").
+laptop(14, intel, 8, 256, 40219,
+    "https://rozetka.com.ua/ua/lenovo_thinkpad_t470s_20hfs0c100/p20085898/").
+laptop(15, intel, 16, 512, 72499,
+    "https://rozetka.com.ua/ua/apple_z0rf00266/p27169449/").
+laptop(15, intel, 8, 256, 17999,
+    "https://rozetka.com.ua/ua/lenovo_80xl02rjra/p19341847/").
+laptop(15, intel, 4, 500, 15799,
+    "https://rozetka.com.ua/ua/lenovo_ideapad_510_15ikb_80sv00lera/p13668244/").
+laptop(14, intel, 16, 256, 23216,
+    "https://rozetka.com.ua/ua/lenovo_20h1006xrt/p24395896/").
+laptop(15, intel, 8, 1, 14399,
+    "https://rozetka.com.ua/ua/lenovo_80xl02x0ra/p21847470/").
+laptop(15, intel, 4, 1, 14999,
+    "https://rozetka.com.ua/ua/dell_inspiron_3567_i35f5410dil_6bk/p24896901/").
